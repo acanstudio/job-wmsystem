@@ -1,0 +1,45 @@
+{
+    "name": "swoolecan/foundation",
+    "description": "PHP基础代码",
+    "keywords": [
+        "php",
+        "hyperf",
+        "foundation",
+        "swoole",
+        "laravel"
+    ],
+    "homepage": "https://github.com/swoolecan/foundation",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wangcan",
+            "homepage": "https://github.com/swoolecan",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.5.0",
+        "jenssegers/agent": "^2.6.4",
+        "overtrue/easy-sms": "^2.4.1",
+        "w7corp/easywechat": "^2.1.41",
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Swoolecan\\Foundation\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Swoolecan\\Foundation\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
