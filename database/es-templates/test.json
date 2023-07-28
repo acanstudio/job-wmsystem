@@ -1,0 +1,57 @@
+POST _index_template/test_template_1
+{
+  "index_patterns": [
+    "*test*"
+  ],
+  "priority": 1,
+  "version":1,
+  "template": {
+    "settings":{
+      "number_of_shards":1,
+      "number_of_replicas":1
+    },
+    "mappings": {
+      "properties": {
+        "created_at": {
+          "type": "date"
+        },
+        "created_by": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
+
+PUT _index_template/test_template_compose
+{
+  "index_patterns": ["*compose*"],
+  "template": {
+    "settings": {
+      "number_of_shards": 1
+    },
+    "mappings": {
+      "_source": {
+        "enabled": false
+      },
+      "properties": {
+        "host_name": {
+          "type": "keyword"
+        },
+        "created_at": {
+          "type": "date",
+          "format": "EEE MMM dd HH:mm:ss Z yyyy"
+        }
+      }
+    },
+    "aliases": {
+      "mydata": { }
+    }
+  },
+  "priority": 200,
+  "composed_of": ["test_component_template_1", "test_component_template_2"],
+  "version": 3,
+  "_meta": {
+    "description": "my custom"
+  }
+}

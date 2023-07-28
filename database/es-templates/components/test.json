@@ -1,0 +1,73 @@
+PUT /_component_template/component-template-000001
+{
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "aliases": {
+            "alias1": {},
+            "alias2": {
+                "filter": {
+                    "term": {
+                        "user.id": "kimchy"
+                    }
+                },
+                "routing": "shard-1"
+            },
+            "{index}-alias": {}
+        }
+    },
+    "version": 1
+}
+
+
+PUT /_component_template/ct1
+{
+  "template": {
+    "settings": {
+      "index.number_of_shards": 2
+    }
+  }
+}
+ 
+PUT /_component_template/ct2
+{
+  "template": {
+    "settings": {
+      "index.number_of_replicas": 0
+    },
+    "mappings": {
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  }
+}
+
+PUT _component_template/test_component_template_1
+{
+  "template": {
+    "mappings": {
+      "properties": {
+        "ip_address": {
+          "type": "ip"
+        }
+      }
+    }
+  }
+}
+
+PUT _component_template/test_component_template_2
+{
+  "template": {
+    "mappings": {
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  }
+}

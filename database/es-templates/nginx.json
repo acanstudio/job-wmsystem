@@ -1,0 +1,125 @@
+{
+  "order": 1,
+  "template": "logstash-app-trace-*",
+  "settings": {
+    "index": {
+      "number_of_shards": "3",
+      "number_of_replicas": "1",
+      "refresh_interval": "5s"
+    }
+  },
+  "mappings": {
+    "_default_": {
+      "properties": {
+        "request": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "span_name": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "body_bytes_sent": {
+          "type": "integer"
+        },
+        "type": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "http_user_agent": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "uid": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "protocol": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "request_time": {
+          "type": "long"
+        },
+        "node_type": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "pspan_id": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "remote_addr": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "trace_id": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "device_id": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "span_id": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "time_local": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "params": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "server_addr": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "url": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "request_body": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "http_referer": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "http_x_forwarded_for": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "upstream_response_time": {
+          "type": "integer"
+        },
+        "response_time": {
+          "type": "long"
+        },
+        "http_status": {
+          "type": "integer"
+        },
+        "result_code": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "node_id": {
+          "index": "not_analyzed",
+          "type": "string"
+        }
+      },
+      "_all": {
+        "enabled": false
+      }
+    }
+  },
+  "aliases": {
+    "app-trace-template": {}
+  }
+}
