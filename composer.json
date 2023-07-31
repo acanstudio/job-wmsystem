@@ -26,7 +26,6 @@
         "mews/captcha": "^3.3",
         "symfony/dom-crawler": "^6.2",
         "tymon/jwt-auth": "^2.0",
-        "swoolecan/foundation": "dev-main",
         "aliyuncs/oss-sdk-php": "^2.6",
         "phpoffice/phpspreadsheet": "^1.28",
         "fruitcake/laravel-cors": "dev-develop"
@@ -49,7 +48,8 @@
             "Database\\Seeders\\": "database/seeders/",
             "Swoolecan\\Foundation\\": "library/foundation/src/",
             "Framework\\Baseapp\\": "library/laravel-baseapp/src/",
-            "ModulePassport\\": "library/passport/app/"
+            "ModulePassport\\": "library/passport/app/",
+            "ModuleWmsystem\\": "library/wmsystem/app/"
         },
         "files": [
             "library/laravel-baseapp/src/Functions/functions.php"
@@ -88,11 +88,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://mirrors.huaweicloud.com/repository/php/"
-        }
-     ]
+    "prefer-stable": true
 }

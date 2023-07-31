@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Module{{UMODULE}}\Models;
+namespace ModuleWmsystem\Models;
 
 use Framework\Baseapp\Models\AbstractModel as AbstractModelBase;
 
@@ -10,6 +10,6 @@ class AbstractModel extends AbstractModelBase
 {
     protected function getAppcode()
     {
-        return '{{MODULE}}';
+        return 'wmsystem';
     }
 }

@@ -43,71 +43,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapWebRoutes();
-        $this->mapWebsiteRoutes();
-        $this->mapCultureRoutes();
-        //$this->mapInfocmsRoutes();
-        $this->mapBigdataRoutes();
         $this->mapApiRoutes();
-        $this->mapThirdRoutes();
-    }
-
-    protected function mapWebsiteRoutes()
-    {
-        Route::prefix('')
-            ->middleware('api')
-            ->group(base_path('routes/website.php'));
-    }
-
-    /**
-     * Define the "culture" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapCultureRoutes()
-    {
-        Route::prefix('')
-            ->middleware('api')
-            //->namespace($this->namespace)
-            ->group(base_path('routes/culture.php'));
-    }
-
-    protected function mapInfocmsRoutes()
-    {
-        Route::prefix('')
-            ->middleware('api')
-            ->group(base_path('routes/infocms.php'));
-    }
-
-    /**
-     * Define the "third" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapThirdRoutes()
-    {
-        Route::prefix('')
-            ->middleware('api')
-            //->namespace($this->namespace)
-            ->group(base_path('routes/third.php'));
-    }
-
-    /**
-     * Define the "bigdata" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapBigdataRoutes()
-    {
-        Route::prefix('')
-            ->middleware('api')
-            //->namespace($this->namespace)
-            ->group(base_path('routes/bigdata.php'));
     }
 
     /**

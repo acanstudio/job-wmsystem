@@ -1,13 +1,13 @@
 {
-    "name": "candocker/{{MODULE}}",
+    "name": "candocker/wmsystem",
     "type": "project",
     "keywords": [
         "php",
         "application",
-        "{{MODULE}}",
+        "wmsystem",
         "resource"
     ],
-    "description": "A application of {{MODULE}}",
+    "description": "A application of wmsystem",
     "license": "MIT",
     "require": {
         "php": "^8.2.0"
@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Module{{UMODULE}}\\": "app/"
+            "ModuleWmsystem\\": "app/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Module{{UMODULE}}\\Test\\": "./test/"
+            "ModuleWmsystem\\Test\\": "./test/"
         }
     },
     "minimum-stability": "dev",
