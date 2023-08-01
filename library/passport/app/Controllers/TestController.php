@@ -45,7 +45,7 @@ class TestController extends AbstractController
     public function _testResource($request)
     {
         \DB::update("TRUNCATE `wp_auth_role_permission`;");
-        \DB::update("REPLACE INTO `wp_auth_role_permission`(`role_code`, `permission_code`, `created_at`) SELECT 'admin', `code`, `created_at` FROM `wp_auth_permission` WHERE 1 ;");
+        \DB::update("REPLACE INTO `wp_auth_role_permission`(`role_code`, `permission_code`, `created_at`) SELECT 'superman', `code`, `created_at` FROM `wp_auth_permission` WHERE 1 ;");
         $this->getRepositoryObj('resource')->cacheResourceDatas();
         $this->getRepositoryObj('permission')->cacheRouteDatas();
         //$params = $request->all();

@@ -104,7 +104,7 @@ class GenResourceCommand extends AbstractCommand
     {
         list($app, $resource) = explode('-', $resourceBase);
         foreach ($elems as $type => $elem) {
-            if (in_array($app, ['merchant'])) {
+            if (in_array($app, ['passport'])) {
                 continue;
             }
             if (strpos($elem, 'Framework') === 0) {
@@ -160,7 +160,7 @@ class GenResourceCommand extends AbstractCommand
         $content = file_get_contents($stubFile);
         $table = $this->getResource()->strOperation($resource, 'snake');
 
-        $fieldStr = $type == 'repository' ? $this->getPointField('infocms', $table, 'string') : '';
+        $fieldStr = $type == 'repository' ? $this->getPointField('wmsystem', $table, 'string') : '';
         $content = str_replace(['%NAMESPACE%', '%CLASS%', '%TABLE%', '%FIELDSTR%'], [$namespace, $class, $table, $fieldStr], $content);
         $path = dirname($file);
         if (!is_dir($path)) {
